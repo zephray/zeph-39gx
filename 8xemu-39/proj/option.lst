@@ -1,0 +1,115 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;===========================================
+    2 00000000         ; NAME: OPTION.A
+    3 00000000         ; DESC: Configuration options for .S files
+    4 00000000         ; HISTORY:
+    5 00000000         ; 02.28.2002: ver 0.0
+    6 00000000         ;===========================================
+    7 00000000         
+    8 00000000         ;Start address of each stacks,
+    9 00000000         ;_STACK_BASEADDRESS EQU 0x33ff8000  
+   10 00000000         ;_MMUTT_STARTADDRESS EQU 0x33ff8000  
+   11 00000000         ;_ISR_STARTADDRESS EQU 0x33ffff00
+   12 00000000         
+   13 00000000                 GBLL             PLL_ON_START
+   14 00000000 TRUE     
+                       PLL_ON_START
+                               SETL             {TRUE}
+   15 00000000         
+   16 00000000         
+   17 00000000                 GBLL             ENDIAN_CHANGE
+   18 00000000 FALSE    
+                       ENDIAN_CHANGE
+                               SETL             {FALSE}
+   19 00000000         
+   20 00000000                 GBLA             ENTRY_BUS_WIDTH
+   21 00000000 00000010 
+                       ENTRY_BUS_WIDTH
+                               SETA             16
+   22 00000000         
+   23 00000000         
+   24 00000000         ;BUSWIDTH = 16,32
+   25 00000000                 GBLA             BUSWIDTH    ;max. bus width for
+                                                             the GPIO configura
+                                                            tion
+   26 00000000 00000020 
+                       BUSWIDTH
+                               SETA             32
+   27 00000000         
+   28 00000000         
+   29 00000000                 GBLA             FCLK
+   30 00000000 02FAF080 
+                       FCLK    SETA             50000000
+   31 00000000         
+   32 00000000                 [                FCLK = 20000000
+   36                          ]
+   37 00000000         
+   38 00000000                 [                FCLK = 30000000
+   42                          ]
+   43 00000000         
+   44 00000000                 [                FCLK = 50000000
+   45 00000000 0000005C 
+                       M_MDIV  EQU              0x5c        ;Fin=12.0MHz Fout=5
+                                                            0.0MHz
+   46 00000000 00000004 
+                       M_PDIV  EQU              0x4
+   47 00000000 00000002 
+                       M_SDIV  EQU              0x2
+   48 00000000                 ]
+   49 00000000         
+   50 00000000                 [                FCLK = 60000000
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   54                          ]
+   55 00000000         
+   56 00000000                 [                FCLK = 70000000
+   60                          ]
+   61 00000000         
+   62 00000000                 [                FCLK = 75000000
+   66                          ]
+   67 00000000         
+   68 00000000                 END
+Command Line: --debug --xref --cpu=ARM920T --depend=..\obj\option.d -o..\obj\op
+tion.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\Sam
+sung --list=.\option.lst ..\src\option.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+M_MDIV 0000005C
+
+Symbol: M_MDIV
+   Definitions
+      At line 45 in file ..\src\option.s
+   Uses
+      None
+Comment: M_MDIV unused
+M_PDIV 00000004
+
+Symbol: M_PDIV
+   Definitions
+      At line 46 in file ..\src\option.s
+   Uses
+      None
+Comment: M_PDIV unused
+M_SDIV 00000002
+
+Symbol: M_SDIV
+   Definitions
+      At line 47 in file ..\src\option.s
+   Uses
+      None
+Comment: M_SDIV unused
+3 symbols
+338 symbols in table

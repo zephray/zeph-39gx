@@ -1,0 +1,59 @@
+Dependencies for Project '39gs', Target 'Target 1': (DO NOT MODIFY !)
+F (..\src\main.c)(0x56A33711)(-c --cpu ARM920T -g -O1 -I..\src\emu -I..\src-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Samsung-DHP_ARM -DMDK_ARM-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C7C554)
+I (..\src\2410addr.h)(0x54C481E6)
+I (..\src\option.h)(0x54BB0D7E)
+I (..\src\buzz.h)(0x54C38A8F)
+I (..\src\misc.h)(0x556A6BC1)
+I (..\src\hwlcd.h)(0x556A8257)
+I (..\src\mmu.h)(0x55C5B085)
+I (..\src\2410slib.h)(0x56A1B688)
+I (..\src\timer.h)(0x56A1D184)
+I (..\src\interrupt.h)(0x56A32FFA)
+F (..\src\S3C2410A.s)(0x56A484D1)(--cpu ARM920T -g-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Samsung--list .\s3c2410a.lst --xref -o ..\obj\s3c2410a.o --depend ..\obj\s3c2410a.d)
+F (..\src\2410addr.s)(0x54BA616F)(--cpu ARM920T -g-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Samsung--list .\2410addr.lst --xref -o ..\obj\2410addr.o --depend ..\obj\2410addr.d)
+F (..\src\option.s)(0x471868B6)(--cpu ARM920T -g-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Samsung--list .\option.lst --xref -o ..\obj\option.o --depend ..\obj\option.d)
+F (..\src\buzz.c)(0x569D97ED)(-c --cpu ARM920T -g -O1 -I..\src\emu -I..\src-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Samsung-DHP_ARM -DMDK_ARM-o ..\obj\buzz.o --omf_browse ..\obj\buzz.crf --depend ..\obj\buzz.d)
+I (..\src\buzz.h)(0x54C38A8F)
+I (..\src\2410addr.h)(0x54C481E6)
+I (..\src\option.h)(0x54BB0D7E)
+F (..\src\misc.c)(0x569D97D9)(-c --cpu ARM920T -g -O1 -I..\src\emu -I..\src-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Samsung-DHP_ARM -DMDK_ARM-o ..\obj\misc.o --omf_browse ..\obj\misc.crf --depend ..\obj\misc.d)
+I (..\src\misc.h)(0x556A6BC1)
+F (..\src\font.c)(0x569D97D2)(-c --cpu ARM920T -g -O1 -I..\src\emu -I..\src-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Samsung-DHP_ARM -DMDK_ARM-o ..\obj\font.o --omf_browse ..\obj\font.crf --depend ..\obj\font.d)
+F (..\src\interrupt.c)(0x56A335C6)(-c --cpu ARM920T -g -O1 -I..\src\emu -I..\src-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Samsung-DHP_ARM -DMDK_ARM-o ..\obj\interrupt.o --omf_browse ..\obj\interrupt.crf --depend ..\obj\interrupt.d)
+I (..\src\2410addr.h)(0x54C481E6)
+I (..\src\option.h)(0x54BB0D7E)
+I (..\src\interrupt.h)(0x56A32FFA)
+F (..\src\interface.c)(0x569D97FF)(-c --cpu ARM920T -g -O1 -I..\src\emu -I..\src-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Samsung-DHP_ARM -DMDK_ARM-o ..\obj\interface.o --omf_browse ..\obj\interface.crf --depend ..\obj\interface.d)
+I (..\src\2410addr.h)(0x54C481E6)
+I (..\src\option.h)(0x54BB0D7E)
+I (..\src\buzz.h)(0x54C38A8F)
+I (..\src\misc.h)(0x556A6BC1)
+I (..\src\hwlcd.h)(0x556A8257)
+I (..\src\interface.h)(0x556A6B0B)
+I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C7C554)
+I (C:\Keil\ARM\ARMCC\include\stdlib.h)(0x51C7C554)
+I (C:\Keil\ARM\ARMCC\include\string.h)(0x51C7C554)
+F (..\src\hwlcd.c)(0x56A3384A)(-c --cpu ARM920T -g -O1 -I..\src\emu -I..\src-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Samsung-DHP_ARM -DMDK_ARM-o ..\obj\hwlcd.o --omf_browse ..\obj\hwlcd.crf --depend ..\obj\hwlcd.d)
+I (..\src\hwlcd.h)(0x556A8257)
+I (..\src\misc.h)(0x556A6BC1)
+I (..\src\2410addr.h)(0x54C481E6)
+I (..\src\option.h)(0x54BB0D7E)
+I (..\src\font.h)(0x54C46F57)
+F (..\src\key.c)(0x56A336BC)(-c --cpu ARM920T -g -O1 -I..\src\emu -I..\src-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Samsung-DHP_ARM -DMDK_ARM-o ..\obj\key.o --omf_browse ..\obj\key.crf --depend ..\obj\key.d)
+I (..\src\key.h)(0x55C5A3F8)
+F (..\src\mmu.c)(0x55F57085)(-c --cpu ARM920T -g -O1 -I..\src\emu -I..\src-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Samsung-DHP_ARM -DMDK_ARM-o ..\obj\mmu.o --omf_browse ..\obj\mmu.crf --depend ..\obj\mmu.d)
+I (..\src\option.h)(0x54BB0D7E)
+I (..\src\2410addr.h)(0x54C481E6)
+I (..\src\mmu.h)(0x55C5B085)
+I (..\src\2410slib.h)(0x56A1B688)
+F (..\src\2410slib.s)(0x3C981B86)(--cpu ARM920T -g-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Samsung--list .\2410slib.lst --xref -o ..\obj\2410slib.o --depend ..\obj\2410slib.d)
+F (..\src\Retarget.c)(0x55F565BB)(-c --cpu ARM920T -g -O1 -I..\src\emu -I..\src-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Samsung-DHP_ARM -DMDK_ARM-o ..\obj\retarget.o --omf_browse ..\obj\retarget.crf --depend ..\obj\retarget.d)
+I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C7C554)
+I (C:\Keil\ARM\ARMCC\include\time.h)(0x51C7C554)
+I (C:\Keil\ARM\ARMCC\include\rt_misc.h)(0x51C7C554)
+F (..\src\timer.c)(0x56A335F7)(-c --cpu ARM920T -g -O1 -I..\src\emu -I..\src-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Samsung-DHP_ARM -DMDK_ARM-o ..\obj\timer.o --omf_browse ..\obj\timer.crf --depend ..\obj\timer.d)
+I (..\src\timer.h)(0x56A1D184)
+I (..\src\interrupt.h)(0x56A32FFA)
+I (..\src\2410addr.h)(0x54C481E6)
+I (..\src\option.h)(0x54BB0D7E)

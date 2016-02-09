@@ -1,0 +1,25 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\ARM9\MyTest39\FirstDemo\proj\39gs.uvproj
+Project File Date:  01/17/2015
+
+<h2>Output:</h2>
+Rebuild target 'Target 1'
+compiling main.c...
+assembling S3C2410A.s...
+linking...
+Program Size: Code=880 RO-data=16 RW-data=0 ZI-data=1256  
+After Build - User command #1: C:\Keil\ARM\ARMCC\bin\fromelf.exe --bin --output ./39gs.bin ./39gs.axf
+"./39gs.axf": Error: Q0122E: Could not open file './39gs.axf': No such file or directory
+Finished: 0 information, 0 warning and 1 error messages.
+"..\obj\39gs.axf" - 0 Errors, 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+assembling S3C2410A.s...
+linking...
+Program Size: Code=880 RO-data=16 RW-data=0 ZI-data=1256  
+After Build - User command #1: C:\Keil\ARM\ARMCC\bin\fromelf.exe --bin --output ../obj/39gs.bin ../obj/39gs.axf
+"..\obj\39gs.axf" - 0 Errors, 0 Warning(s).

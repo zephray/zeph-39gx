@@ -1,0 +1,20 @@
+--cpu ARM920T
+"..\obj\main.o"
+"..\obj\s3c2410a.o"
+"..\obj\2410addr.o"
+"..\obj\option.o"
+"..\obj\buzz.o"
+"..\obj\misc.o"
+"..\obj\font.o"
+"..\obj\interrupt.o"
+"..\obj\interface.o"
+"..\obj\hwlcd.o"
+"..\obj\key.o"
+"..\obj\mmu.o"
+"..\obj\2410slib.o"
+"..\obj\retarget.o"
+"..\obj\timer.o"
+--strict --scatter "..\obj\39gs.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\39gs.map" -o ..\obj\39gs.axf
