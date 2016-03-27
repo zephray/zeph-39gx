@@ -53,6 +53,10 @@ int main()
 	LCD_Init();
 	LCD_Clear(0);
 	LCD_String(0,0,(unsigned char *)"TI8XEMU",1);
+        KBD_Config();
+        Tim4_Init(10);
+	Tim4_Start(1);
+        ENABLE_INT();
 	
 	emu_main();
 	

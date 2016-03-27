@@ -114,6 +114,7 @@ CAMDIVN_OFS     EQU     0X18            ; CAMDIVN Offset
 ;// </e>
 CLK_SETUP       EQU     1
 MPLLCON_Val     EQU     0x000A1031
+;MPLLCON_Val     EQU     0x00043012
 UPLLCON_Val     EQU     0x00078023
 CLKCON_Val      EQU     0x00006130
 CLKSLOW_Val     EQU     0x00000084
@@ -683,7 +684,7 @@ PUPE_Val        EQU     0x00000000
 ;//   </e>
 PIOF_SETUP      EQU     1
 PCONF_Val       EQU     0x00004014
-PUPF_Val        EQU     0x00000000
+PUPF_Val        EQU     0x00000071
 
 ;//   <e> Port G
 ;//     <o1.0..1>          PG0  <0=> Input    <1=> Output  <2=> EINT[8]   <3=> Reserved 
@@ -723,7 +724,7 @@ PUPF_Val        EQU     0x00000000
 ;//   </e>
 PIOG_SETUP      EQU     1
 PCONG_Val       EQU     0x55550001
-PUPG_Val        EQU     0x00000000
+PUPG_Val        EQU     0x00000001
 
 ;//   <e> Port H
 ;//     <o1.0..1>        PH0  <0=> Input   <1=> Output  <2=> nCTS0    <3=> Reserved 

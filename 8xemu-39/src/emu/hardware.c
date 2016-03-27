@@ -6,6 +6,7 @@
 #include "z80.h"
 #include "z80io.h"
 #include "hardware.h"
+#include "key.h"
 
 static int key_stuck = 0;
 static int ROMSIZE;
@@ -57,7 +58,139 @@ byte invert[4] = {3,1,2,0};
 
 byte KeyboardRead(void)
 {
-	return 0xFF;
+  if ((KeyMatrixLo == 0)&&(KeyMatrixHi == 0))
+    return 0xFF;
+	     
+	xByte = 0xFF;
+	if((CALC == 85) || (CALC == 86))
+	{
+		if(~KeypadMask&1)
+		{
+			if(kb_key_h(KB_SCAN_DOWN))
+				xByte ^= 1;
+			if(kb_key_h(KB_SCAN_LEFT))
+				xByte ^= 2;
+			if(kb_key_h(KB_SCAN_RIGHT))
+				xByte ^= 4;
+			if(kb_key_h(KB_SCAN_UP))
+				xByte ^= 8;
+		}
+
+		if(~KeypadMask&2)
+		{
+			if(kb_key(KB_SCAN_ENTER))
+				xByte ^= 1;
+			if(kb_key(KB_SCAN_X))
+				xByte ^= 2;
+			if(kb_key(KB_SCAN_T))
+				xByte ^= 4;
+			if(kb_key(KB_SCAN_O))
+				xByte ^= 8;
+			if(kb_key(KB_SCAN_J))
+				xByte ^= 16;
+			if(kb_key(KB_SCAN_E))
+				xByte ^= 32;
+			if(kb_key(KB_SCAN_BACKSPACE))
+				xByte ^= 64;
+		}
+
+		if(~KeypadMask&4)
+		{
+			if(kb_key(KB_SCAN_MINUS))
+				xByte ^= 1;
+			if(kb_key(KB_SCAN_W))
+				xByte ^= 2;
+			if(kb_key(KB_SCAN_S))
+				xByte ^= 4;
+			if(kb_key(KB_SCAN_N))
+				xByte ^= 8;
+			if(kb_key(KB_SCAN_I))
+				xByte ^= 16;
+			if(kb_key(KB_SCAN_D))
+				xByte ^= 32;
+			if(kb_key(KB_SCAN_F10))
+				xByte ^= 64;
+		}
+
+		if(~KeypadMask&8)
+		{
+			if(kb_key(KB_SCAN_Z))
+				xByte ^= 1;
+			if(kb_key(KB_SCAN_V))
+				xByte ^= 2;
+			if(kb_key(KB_SCAN_R))
+				xByte ^= 4;
+			if(kb_key(KB_SCAN_M))
+				xByte ^= 8;
+			if(kb_key(KB_SCAN_H))
+				xByte ^= 16;
+			if(kb_key(KB_SCAN_C))
+				xByte ^= 32;
+			if(kb_key(KB_SCAN_F9))
+				xByte ^= 64;
+			if(kb_key_h(KB_SCAN_DELETE))
+				xByte ^= 128;
+		}
+
+		if(~KeypadMask&16)
+		{
+			if(kb_key(KB_SCAN_Y))
+				xByte ^= 1;
+			if(kb_key(KB_SCAN_U))
+				xByte ^= 2;
+			if(kb_key(KB_SCAN_Q))
+				xByte ^= 4;
+			if(kb_key(KB_SCAN_L))
+				xByte ^= 8;
+			if(kb_key(KB_SCAN_G))
+				xByte ^= 16;
+			if(kb_key(KB_SCAN_B))
+				xByte ^= 32;
+			if(kb_key(KB_SCAN_F8))
+				xByte ^= 64;
+			if(kb_key_h(KB_SCAN_QUOTE))
+				xByte ^= 128;
+		}
+
+		if(~KeypadMask&32)
+		{
+			if(kb_key_h(KB_SCAN_EQUAL))
+				xByte ^= 2;
+			if(kb_key_h(KB_SCAN_P))
+				xByte ^= 4;
+			if(kb_key_h(KB_SCAN_K))
+				xByte ^= 8;
+			if(kb_key_h(KB_SCAN_F))
+				xByte ^= 16;
+			if(kb_key_h(KB_SCAN_A))
+				xByte ^= 32;
+			if(kb_key_h(KB_SCAN_F7))
+				xByte ^= 64;
+			if(kb_key_h(KB_SCAN_LCONTROL))
+				xByte ^= 128;
+		}
+
+		if(~KeypadMask&64)
+		{
+			if(kb_key_h(KB_SCAN_F5))
+				xByte ^= 1;
+			if(kb_key_h(KB_SCAN_F4))
+				xByte ^= 2;
+			if(kb_key_h(KB_SCAN_F3))
+				xByte ^= 4;
+			if(kb_key_h(KB_SCAN_F2))
+				xByte ^= 8;
+			if(kb_key_h(KB_SCAN_F1))
+				xByte ^= 16;
+			if(kb_key_h(KB_SCAN_LSHIFT))
+				xByte ^= 32;
+			if(kb_key_h(KB_SCAN_ESC))
+				xByte ^= 64;
+			if(kb_key_h(KB_SCAN_TAB))
+				xByte ^= 128;
+		}
+	}
+        return xByte;
 }
 
 byte LinkRecv(void)
@@ -299,7 +432,7 @@ byte Z80_In(byte Port)
 	case 0x03:
                 xByte = 0;
 
-                if((*(volatile unsigned *)0x56000064)!=0x000000FE)
+                if(kb_key_h(KB_ON))
                         xByte |= ONmask;
                 else
 			xByte |= 8;
@@ -563,7 +696,7 @@ int Z80_Interrupt(void)
 {
 
   key_stuck = 0;
-  DrawScreen();
+  //DrawScreen();
 
   return 0xFF;
 }

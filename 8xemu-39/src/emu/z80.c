@@ -16,6 +16,7 @@
 #include "Z80.h"
 #include "z80io.h"
 #include "hardware.h"
+#include "timer.h"
 
 #define M_RDMEM(A)      Z80_RDMEM(A)
 #define M_WRMEM(A,V)    Z80_WRMEM(A,V)
@@ -2476,7 +2477,19 @@ int Z80_Execute (void)
 /****************************************************************************/
 word Z80 (void)
 {
- while (Z80_Execute());
+  unsigned int cont=1;
+  unsigned int count;
+  while (cont) {
+    count=0;
+    SysTick=0;
+    while((count<12)&&(cont)) {
+      Z80_Execute();
+      count++;
+    }
+    DrawScreen();
+    while(SysTick==0);
+  }
+
  return(R.PC.W.l);
 }
 

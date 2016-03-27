@@ -6,6 +6,7 @@
 #include "timer.h"
 #include "interrupt.h"
 #include "2410addr.h"
+#include "key.h"
 
 volatile unsigned long SysTick=0;
 
@@ -28,17 +29,18 @@ void Tim4_Start(unsigned char on)
 {
 	if (on)
 	{
-		rTCON &= ~0x00700000;//清空设定
-	  rTCON |=  0x00700000;//开启自动重装，重装初值
+          rTCON &= ~0x00700000;//清空设定
+          rTCON |=  0x00700000;//开启自动重装，重装初值
 	  rTCON &= ~0x00200000;//完成初值重装
 	}else
-		rTCON &= ~0x00700000;
+          rTCON &= ~0x00700000;
 }
 
 __irq void Tim4_IntHandler(void)
 {
-	rSRCPND = 1<<14;
-	SysTick ++;
-	rINTPND = 1<<14;
+  rSRCPND = 1<<14;
+  KBD_Scan();
+  SysTick++;
+  rINTPND = 1<<14;
 }
 

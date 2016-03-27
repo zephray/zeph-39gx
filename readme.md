@@ -4,9 +4,6 @@ This projects aims to create a third-party open source firmware for HP-39gs calc
 
 ##What's inside this repository
 
-* zbl-39: HP-39gs port of Zeph-Bootloader
-* zbl-39-daemon: Deamon app which will be downloaded to calculator while upgrading
-* zbl-flash: Zeph-Bootloader USB Flash Utility for Windows
 * 8xemu-39: HP-39gs port of TI-8XEMU, an tiny TI-82\83\85\86 emulator
 
 ##I am a user, how to install Zeph-39GX to my calculator?
@@ -25,7 +22,7 @@ You would need IAR Embedded Workbench for ARM or KEIL MDK-ARM in order to compil
 
 Currently you would need a JTAG debugger to flash a stock HP-39gs, J-Link and J-Flash are confirmed to work, a homebrew LPT JTAG interface should also work fine.
 
-First flash zbl-39 to NOR-Flash address 0 with JTAG, then reset the calculator while pressing '0' key, you should be prompted to download the firmware via USB, connect the USB port to PC, HID driver should be automatically installed. Execute the USB Flash Utitily, select your compiled bin and press download.
+Flash 39gs.bin in object directory to 0x0000000 of NOR Flash and your own ti-86 ROM file to 0x00080000 of NOR Flash with JTAG.
 
 * Debug
 
