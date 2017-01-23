@@ -2,6 +2,22 @@
 
 This projects aims to create a third-party open source firmware for HP-39gs calculator. Currently mainly a emulator which will emulate TI-82/83/85/86.
 
+##Project status
+Well, it's almost like... I gave up. So here is what we have:
+* ARM9 core with I/D cache and MMU
+* S3C2410 Interrupt Controller
+* S3C2410 PWM Timer
+* S3C2410 General Timer
+* S3C2410 LCD Controller
+* S3C2410 GPIO
+* HP-39gs Buzzer Driver (PWM)
+* HP-39gs Keypad Driver (GPIO)
+
+What we do NOT have:
+* Compatibility with stock bootloader
+* Any way of downloading this firmware into calculator without a JTAG
+* Power management
+
 ##What's inside this repository
 
 * 8xemu-39: HP-39gs port of TI-8XEMU, an tiny TI-82\83\85\86 emulator
@@ -31,4 +47,4 @@ The program should run with a simple reset after downloading. If you wish to deb
 ##Contact me
 
 * My website http://zephray.com
-* My email nbzwt@126.com)
+* My email zephray@outlook.com

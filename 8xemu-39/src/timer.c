@@ -10,7 +10,8 @@
 
 volatile unsigned long SysTick=0;
 
-//Prescaler为Tim2（蜂鸣器）和Tim4共用，保持配置一致
+//Prescaler was shared by both Tim2(Buzzer) and Tim4(SysTick), 
+//so keep the configuration the same
 void Tim4_Init(unsigned long freq)
 {
 	rTCFG0  &= ~0x0000ff00;
@@ -24,23 +25,23 @@ void Tim4_Init(unsigned long freq)
 	IRQ_Unmask(14);
 }
 
-//on=1 启动 0 关闭
+//1 is on 0 is off
 void Tim4_Start(unsigned char on)
 {
 	if (on)
 	{
-          rTCON &= ~0x00700000;//清空设定
-          rTCON |=  0x00700000;//开启自动重装，重装初值
-	  rTCON &= ~0x00200000;//完成初值重装
+        rTCON &= ~0x00700000;//clear settings
+        rTCON |=  0x00700000;//auto reload on & reload initial value
+        rTCON &= ~0x00200000;//finish reload
 	}else
-          rTCON &= ~0x00700000;
+        rTCON &= ~0x00700000;
 }
 
 __irq void Tim4_IntHandler(void)
 {
-  rSRCPND = 1<<14;
-  KBD_Scan();
-  SysTick++;
-  rINTPND = 1<<14;
+    rSRCPND = 1<<14;
+    KBD_Scan();
+    SysTick++;
+    rINTPND = 1<<14;
 }
 

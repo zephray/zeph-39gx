@@ -20,6 +20,7 @@
 #define LCD_UN1_LOW()  rGPDDAT &= ~(1<<7)
 #define LCD_UN2_LOW()  rGPDDAT &= ~(1<<8)
 
+//Send one byte to LCD power controller chip
 void LCD_WriteDat(unsigned char d)
 {
 	unsigned char i;
@@ -41,6 +42,7 @@ void LCD_WriteDat(unsigned char d)
 	LCD_CS_HIGH();
 }
 
+//Init GPIO used by LCD power controller chip
 void LCD_IOInit(void)
 {
 	rGPDCON &= ~(3<<14);
@@ -55,6 +57,7 @@ void LCD_IOInit(void)
 	rGPDCON |=  (1<<26);
 }
 
+//LCD initialize sequence
 void LCD_Init(void)
 {
 	LCD_UN1_LOW();
@@ -99,6 +102,7 @@ void LCD_Init(void)
 	LCD_WriteDat(0xFF);
 }
 
+//Just clear the internal framebuffer
 void LCD_Clear(unsigned char c)
 {
 	unsigned char *p;
@@ -109,7 +113,7 @@ void LCD_Clear(unsigned char c)
 		*(p+i) = c;
 }
 
-
+//Initialize the S3C2410 LCD controller
 void LCD_CInit()
 {
 	rLCDCON1 = (LCD_CLKVAL << 8)|(LCD_MMODE << 7)|(LCD_PNRMODE << 5)|(LCD_BPPMODE<<1);
@@ -124,6 +128,7 @@ void LCD_CInit()
 	rTPAL = 0;
 	rLCDCON1 |= 0x00000001;
 }
+
 
 void LCD_Point(u16 x,u16 y,u16 c)
 {
