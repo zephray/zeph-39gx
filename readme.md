@@ -1,8 +1,8 @@
-##About Zeph-39GX
+## About Zeph-39GX
 
 This projects aims to create a third-party open source firmware for HP-39gs calculator. Currently mainly a emulator which will emulate TI-82/83/85/86.
 
-##Project status
+## Project status
 Well, it's almost like... I gave up. So here is what we have:
 * ARM9 core with I/D cache and MMU
 * S3C2410 Interrupt Controller
@@ -18,15 +18,15 @@ What we do NOT have:
 * Any way of downloading this firmware into calculator without a JTAG
 * Power management
 
-##What's inside this repository
+## What's inside this repository
 
 * 8xemu-39: HP-39gs port of TI-8XEMU, an tiny TI-82\83\85\86 emulator
 
-##I am a user, how to install Zeph-39GX to my calculator?
+## I am a user, how to install Zeph-39GX to my calculator?
 
 This project is still under early development, currently you may not be able to install on your own.
 
-##I am a developer, how to get started?
+## I am a developer, how to get started?
 
 Please be aware that all operations should be completed in a PC with Windows 2000 or above OS installed.
 
@@ -44,7 +44,7 @@ Flash 39gs.bin in object directory to 0x0000000 of NOR Flash and your own ti-86 
 
 The program should run with a simple reset after downloading. If you wish to debug with IAR or Keil, simply press Debug button(Keil) or Debug without download(IAR) should bring your calculator into debug mode (Surely, via JTAG).
 
-##Contact me
+## Contact me
 
 * My website http://zephray.com
 * My email zephray@outlook.com
